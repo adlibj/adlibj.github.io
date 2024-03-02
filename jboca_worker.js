@@ -4,8 +4,8 @@ async function recordNumber(evt){
 	const root = await navigator.storage.getDirectory()
 	
 	if(evt.data == "clear") {
-		await root.removeEntry("a.txt")
-		self.postMessage("log cleared")
+		const reason = await root.removeEntry("a.txt")
+		self.postMessage(reason)
 	} else {
 		const fileHandle = evt.data
 		
