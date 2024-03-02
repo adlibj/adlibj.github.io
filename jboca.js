@@ -21,8 +21,6 @@ function updateUI(evt){
 	document.getElementById("txt").textContent = evt.data
 }
 
-	
-}
 
 function pickSucceed(value){
 	document.getElementById("txt").textContent = value.name
