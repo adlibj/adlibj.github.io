@@ -9,6 +9,7 @@ async function recordNumber(evt){
 		self.postMessage("Log cleared")
 		} catch(e) {
 		self.postMessage("Log already cleared")
+		self.close()
 		}
 	} else {
 		const fileHandle = evt.data
