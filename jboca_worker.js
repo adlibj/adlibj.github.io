@@ -1,7 +1,8 @@
 self.onmessage = recordNumber
 
-function recordNumber(evt){
-	const fileRWHandle = evt.data
+async function recordNumber(evt){
+	const fileHandle = evt.data
+	const fileRWHandle = await fileHandle.createSyncAccessHandle()
 	const fileSize = fileRWHandle.getSize()
 	const msg = new TextEncoder().encode(new Date().toLocaleString())
 	fileRWHandle.write(msg, { at: fileSize })

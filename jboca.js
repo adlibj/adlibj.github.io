@@ -9,9 +9,6 @@ init_board()
 
 */
 
-var fileHandle
-var fileRWHandle
-
 init_board();
 
 function init_board(){
@@ -24,18 +21,14 @@ function updateUI(evt){
 	document.getElementById("txt").textContent = evt.data
 }
 
-function createSyncAccessSucceed(value){
-	document.getElementById("txt").textContent = value
-	const worker = new Worker("jboca_worker.js")
-	worker.onmessage = updateUI
-	worker.postMessage(value)
+	
 }
 
 function pickSucceed(value){
 	document.getElementById("txt").textContent = value.name
-	fileHandle = value
-	var d = fileHandle.createSyncAccessHandle()
-	d.then(createSyncAccessSucceed,promiseFail)
+	const worker = new Worker("jboca_worker.js")
+	worker.onmessage = updateUI
+	worker.postMessage(value)
 }
 
 function promiseFail(reason){
