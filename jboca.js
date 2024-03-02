@@ -18,7 +18,7 @@ function init_board(){
 	var txt = document.getElementById("txt");
 	const worker = new Worker("jboca_worker.js")
 	worker.onmessage = updateUI
-	worker.postMessage()
+	worker.postMessage("fromMain")
 	document.getElementById("button_pick").addEventListener("click",pickFile);
 	//
 }
