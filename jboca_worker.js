@@ -38,11 +38,11 @@ async function recordNumber(evt){
 					const fileHandle = evt.data
 					const writableHandle = await fileHandle.createWritable()
 					await writableHandle.write(buffer)
-					//await writableHandle.close()
+					await writableHandle.close()
 					self.postMessage("Log updated")
 				}
 			)
 		
-		self.close()
+		//self.close()
 	}
 }
