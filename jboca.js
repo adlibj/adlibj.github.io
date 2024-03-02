@@ -24,7 +24,7 @@ function init_board(){
 }
 
 function updateUI(msg){
-	document.getElementById("txt").textContent = msg
+	document.getElementById("txt").textContent = msg.data
 }
 
 function createSyncAccessSucceed(value){
