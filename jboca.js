@@ -16,25 +16,19 @@ init_board();
 
 function init_board(){
 	var txt = document.getElementById("txt");
-	const worker = new Worker("jboca_worker.js")
-	worker.onmessage = updateUI
-	worker.postMessage("fromMain")
 	document.getElementById("button_pick").addEventListener("click",pickFile);
 	//
 }
 
-function updateUI(msg){
-	document.getElementById("txt").textContent = msg.data
+function updateUI(evt){
+	document.getElementById("txt").textContent = evt.data
 }
 
 function createSyncAccessSucceed(value){
 	document.getElementById("txt").textContent = value
-	fileRWHandle = value
-	const fileSize = fileRWHandle.getSize()
-	const msg = new TextEncoder().encode(new Date().toLocaleString())
-	fileRWHandle.write(msg, { at: fileSize })
-	fileRWHandle.flush()
-	fileRWHandle.close()
+	const worker = new Worker("jboca_worker.js")
+	worker.onmessage = updateUI
+	worker.postMessage(value)
 }
 
 function pickSucceed(value){
