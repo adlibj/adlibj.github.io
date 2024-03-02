@@ -6,8 +6,9 @@ async function recordNumber(evt){
 	if(evt.data == "clear") {
 		try {
 		const reason = await root.removeEntry("a.txt")
+		self.postMessage("Log cleared")
 		} catch(e) {
-		self.postMessage(e.name+e.message)
+		self.postMessage("Log already cleared")
 		}
 	} else {
 		const fileHandle = evt.data
@@ -29,6 +30,7 @@ async function recordNumber(evt){
 		await writableHandle.write(buffer)
 		await writableHandle.close()
 		
-		self.postMessage("log updated")
+		self.postMessage("Log updated")
+		self.close()
 	}
 }
