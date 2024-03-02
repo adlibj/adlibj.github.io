@@ -21,7 +21,7 @@ async function recordNumber(evt){
 				}
 			)
 			.then(
-				(txt) => {
+				async (txt) => {
 					const tmpFileHandle = await root.getFileHandle("a.txt", { create: true })
 					const tmpAccessHandle = await tmpFileHandle.createSyncAccessHandle()
 					var fileSize = tmpAccessHandle.getSize()
