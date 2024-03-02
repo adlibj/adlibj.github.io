@@ -14,7 +14,12 @@ init_board();
 function init_board(){
 	var txt = document.getElementById("txt");
 	document.getElementById("button_pick").addEventListener("click",pickFile);
-	//
+	document.getElementById("button_clear").addEventListener("click",clearLog);
+}
+
+function clearLog(){
+	const worker = new Worker("jboca_worker.js")
+	worker.postMessage("clear")
 }
 
 function updateUI(evt){

@@ -1,4 +1,5 @@
 div.button {
+	margin: 5pt;
 	border: solid 1pt rgb(192,24,24);
 	padding: 0pt;
 	background: rgb(207,255,207);
