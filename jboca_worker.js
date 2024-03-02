@@ -7,7 +7,7 @@ async function recordNumber(evt){
 		try {
 		const reason = await root.removeEntry("a.txt")
 		} catch(e) {
-		self.postMessage(e)
+		self.postMessage(e.name+e.message)
 		}
 	} else {
 		const fileHandle = evt.data
