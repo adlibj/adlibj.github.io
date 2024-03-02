@@ -19,6 +19,7 @@ function init_board(){
 
 function clearLog(){
 	const worker = new Worker("jboca_worker.js")
+	worker.onmessage = updateUI
 	worker.postMessage("clear")
 }
 
