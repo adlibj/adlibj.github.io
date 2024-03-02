@@ -17,16 +17,15 @@ function init_board(){
 	document.getElementById("button_clear").addEventListener("click",clearLog);
 }
 
+function updateUI(evt){
+	document.getElementById("txt").textContent = evt.data
+}
+
 function clearLog(){
 	const worker = new Worker("jboca_worker.js")
 	worker.onmessage = updateUI
 	worker.postMessage("clear")
 }
-
-function updateUI(evt){
-	document.getElementById("txt").textContent = evt.data
-}
-
 
 function pickSucceed(value){
 	document.getElementById("txt").textContent = value.name
