@@ -12,11 +12,11 @@ async function recordNumber(evt){
 		self.close()
 		}
 	} else {
-		fetch("https://www.boca.gov.tw/sp-wain-board-1.html",{ mode:"navigate" })
+		fetch("https://www.boca.gov.tw/sp-wain-board-1.html")
 			.then(
 				(response) => {
 					if(response.ok) {
-						return response.text()
+						return response.header()
 					}
 				}
 			)
