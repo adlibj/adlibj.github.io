@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "seal";
+  src:
+    local("seal"),
+	url("chongxi_seal.otf") format("opentype");
+}
+
+#txt {
+  font-family: "seal";
+  font-size: 64;
+}
