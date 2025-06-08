@@ -5,7 +5,29 @@
 	url("chongxi_seal.otf") format("opentype");
 }
 
+input {
+	vertical-align: middle;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
 #txt {
+  resize: none;
   font-family: "seal";
   font-size: 64;
+  width: 100%;
+  margin-top: 1%;
+  flex: 1 0 max-content;
+}
+
+#slider {
+	width: 80%;
+}
+
+#txt-size {
+	width: 18%;
 }

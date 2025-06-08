@@ -1,8 +1,10 @@
 var slider = document.getElementById("slider");
 var txtSize = document.getElementById("txt-size");
-var stlTxt = document.styleSheets[0].cssRules[1].style;
+var stlTxt = document.styleSheets[0].cssRules[3].style;
+var stlTxtSize = document.styleSheets[0].cssRules[5].style;
 slider.value = "6";
 txtSize.value = "64";
+stlTxtSize.setProperty("font-size", "4rem");
 slider.addEventListener("input",updateTxtSize_slider);
 txtSize.addEventListener("input",updateTxtSize_txtSize);
 
